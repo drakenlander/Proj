@@ -9,12 +9,12 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
   <title>Books</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
     <div class="container-fluid">
-      <a class="navbar-brand h1" href={{ route('books.index') }}>Repositorio de Libros</a>
+      <a class="navbar-brand h1" href={{ route('books.index') }}>Herramienta de Gestión de Objetos Perdidos</a>
       <div class="justify-end ">
         <div class="col ">
-          <a class="btn btn-sm btn-success" href={{ route('books.create') }}>Añadir Libro</a>
+          <a class="btn btn-sm btn-success" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
         </div>
       </div>
     </div>
