@@ -12,6 +12,11 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
     <div class="container-fluid">
       <a class="navbar-brand h1" href={{ route('books.explore') }}>Listado de Objetos Perdidos</a>
+      <div class="justify-end ">
+        <div class="col ">
+          <a class="btn btn-sm btn-success" href={{ route('login') }}>Login</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container mt-5">

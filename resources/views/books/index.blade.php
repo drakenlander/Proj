@@ -16,6 +16,16 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
         <div class="col ">
           <a class="btn btn-sm btn-success" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
         </div>
+        <div class="col ">
+          <a class="btn btn-sm btn-success" href="{{ route('logout') }}"
+          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+        </div>
       </div>
     </div>
   </nav>
