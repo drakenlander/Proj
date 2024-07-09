@@ -16,6 +16,12 @@ class BookController extends Controller
         return view('books.index', compact('books'));
     }
 
+    public function explore()
+    {
+        $books = Book::all();
+        return view('books.explore', compact('books'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
