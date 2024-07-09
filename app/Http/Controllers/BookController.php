@@ -22,8 +22,11 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
+            'object' => 'required|max:255',
+            'description' => 'required',
+            'color' => 'required|max:255',
+            'location' => 'required',
+            'idcard' => 'required|max:255',
         ]);
         Book::create($request->all());
         return redirect()->route('books.index')
@@ -45,8 +48,11 @@ class BookController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
+            'object' => 'required|max:255',
+            'description' => 'required',
+            'color' => 'required|max:255',
+            'location' => 'required',
+            'idcard' => 'required|max:255',
         ]);
         $book = Book::find($id);
         $book->update($request->all());

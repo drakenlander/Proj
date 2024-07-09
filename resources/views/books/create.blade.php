@@ -26,12 +26,28 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
           <form action="{{ route('books.store') }}" method="post">
             @csrf
             <div class="form-group">
-              <label for="title">Objeto</label>
-              <input type="text" class="form-control" id="title" name="title" required>
+              <label for="object">Objeto</label>
+              <input type="text" class="form-control" id="object" name="object" required>
             </div>
+            <br>
             <div class="form-group">
-              <label for="body">Descripción</label>
-              <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+              <label for="description">Descripción</label>
+              <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input type="text" class="form-control" id="color" name="color" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="location">Ubicación</label>
+              <textarea class="form-control" id="location" name="location" rows="3" required></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="idcard">Cédula</label>
+              <input type="text" class="form-control" id="idcard" name="idcard" required>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Añadir Objeto Perdido</button>
