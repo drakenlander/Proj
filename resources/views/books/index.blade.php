@@ -8,7 +8,7 @@
 integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <title>Objetos Perdidos - Administrador</title>
 </head>
-<body>
+<body style="background-color: #f4f5f7;">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
     <div class="container-fluid">
       <a class="navbar-brand h1" href={{ route('books.index') }}>Herramienta de Gestión de Objetos Perdidos</a>
@@ -16,6 +16,9 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
         <div class="row">
           <div class="col ">
             <a class="btn btn-sm btn-success" style="width:175px" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
+          </div>
+          <div class="col ">
+            <a class="btn btn-sm btn-success" style="width:100px" href={{ route('user.show') }}>Mi Perfil</a>
           </div>
           <div class="col ">
             <a class="btn btn-sm btn-success" href="{{ route('logout') }}"

@@ -10,6 +10,6 @@ class UserController extends Controller
     {
         $user = auth()->user();
  
-        return view('user.show', ['user' => $user]);
+        return view('user.show', compact('user'));
     }
 }
