@@ -37,8 +37,16 @@ class BookController extends Controller
 
         $book = new Book();
 
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('img'), $imageName);
+        if($request->hasfile('image'))
+        {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img'), $imageName);
+        }
+
+        else
+        {
+            $imageName = '1.jpg';
+        }
 
         $book->object = $request->object;
         $book->image = 'img/'.$imageName;
