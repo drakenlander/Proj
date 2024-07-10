@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::put('/books/{book}', BookController::class .'@update')->name('books.updat
 Route::delete('/books/{book}', BookController::class .'@destroy')->name('books.destroy');
 
 Route::get('/explore', BookController::class .'@explore')->name('books.explore');
+
+Route::get('/profile', UserController::class .'@show')->name('user.show');
