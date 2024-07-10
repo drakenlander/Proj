@@ -13,18 +13,20 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
     <div class="container-fluid">
       <a class="navbar-brand h1" href={{ route('books.index') }}>Herramienta de Gestión de Objetos Perdidos</a>
       <div class="justify-end ">
-        <div class="col ">
-          <a class="btn btn-sm btn-success" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
-        </div>
-        <div class="col ">
-          <a class="btn btn-sm btn-success" href="{{ route('logout') }}"
-          onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
-          </a>
+        <div class="row">
+          <div class="col ">
+            <a class="btn btn-sm btn-success" style="width:175px" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
+          </div>
+          <div class="col ">
+            <a class="btn btn-sm btn-success" href="{{ route('logout') }}"
+            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+            </a>
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -41,6 +43,8 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
           <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ $book->color }}</li>
             <li class="list-group-item">{{ $book->location }}</li>
+            <li class="list-group-item">{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
+            <li class="list-group-item">{{ $book->updated_at->format('d/m/Y - g:i A')}}</li>
           </ul>
           <div class="card-footer">
             <div class="row">

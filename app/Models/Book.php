@@ -16,4 +16,9 @@ class Book extends Model
         'location',
         'idcard',
     ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
 }
