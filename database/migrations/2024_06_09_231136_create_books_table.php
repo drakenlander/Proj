@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('idcard');
             $table->timestamps();
         });
+
+        Schema::table('books', function (Blueprint $table) {
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -28,5 +32,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('books');
+
+        Schema::table('books', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };

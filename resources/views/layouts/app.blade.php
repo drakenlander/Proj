@@ -40,7 +40,7 @@
                         <!-- Authentication Links -->
                         @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('books.explore') }}">{{ __('Regresar al Listado de Objetos Perdidos') }}</a>
+                                    <a class="nav-link" href="{{ route('books.explore') }}">{{ __('Listado de Objetos Perdidos') }}</a>
                                 </li>
                         @else
                             <li class="nav-item dropdown">
