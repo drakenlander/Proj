@@ -30,10 +30,13 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
                     <p class="card-text">{{ $book->description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{ $book->color }}</li>
-                    <li class="list-group-item">{{ $book->location }}</li>
-                    <li class="list-group-item">{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
+                    <li class="list-group-item"><b>Color: </b>{{ $book->color }}</li>
+                    <li class="list-group-item"><b>Ubicación: </b>{{ $book->location }}</li>
+                    <li class="list-group-item"><b>Fecha del Reporte: </b>{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
                 </ul>
+                <br>
+                <img src="{{ asset($book->image) }}" alt="{{ $book->object }}" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+                <br>
             </div>
         </div>
     </div>

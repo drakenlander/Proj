@@ -27,29 +27,35 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
             @csrf
             @method('PUT')
             <div class="form-group">
-              <label for="object">Objeto</label>
+              <label for="object"><b>Objeto</b></label>
               <input type="text" class="form-control" id="object" name="object"
                 value="{{ $book->object }}" required>
             </div>
             <br>
             <div class="form-group">
-              <label for="description">Descripción</label>
+              <label for="image"><b>Imagen</b></label>
+              <input type="file" class="form-control" id="image" name="image"
+                value="{{ $book->image }}">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="description"><b>Descripción</b></label>
               <textarea class="form-control" id="description" name="description" rows="3" required>{{ $book->description }}</textarea>
             </div>
             <br>
             <div class="form-group">
-              <label for="color">Color</label>
+              <label for="color"><b>Color</b></label>
               <input type="text" class="form-control" id="color" name="color"
                 value="{{ $book->color }}" required>
             </div>
             <br>
             <div class="form-group">
-              <label for="location">Ubicación</label>
+              <label for="location"><b>Ubicación</b></label>
               <textarea class="form-control" id="location" name="location" rows="3" required>{{ $book->location }}</textarea>
             </div>
             <br>
             <div class="form-group">
-              <label for="idcard">Cédula</label>
+              <label for="idcard"><b>Cédula</b></label>
               <input type="text" class="form-control" id="idcard" name="idcard"
                 value="{{ $book->idcard }}" required>
             </div>

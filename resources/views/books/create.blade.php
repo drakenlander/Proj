@@ -31,7 +31,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
             </div>
             <br>
             <div class="form-group">
-              <label for="image">Imágen</label>
+              <label for="image">Imagen</label>
               <input type="file" class="form-control" id="image" name="image">
             </div>
             <br>

@@ -89,8 +89,30 @@ class BookController extends Controller
             'location' => 'required',
             'idcard' => 'required|max:255',
         ]);
+
         $book = Book::find($id);
-        $book->update($request->all());
+
+        if($request->hasfile('image'))
+        {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('img'), $imageName);
+        }
+
+        else
+        {
+            $imageName = '1.jpg';
+        }
+
+        $book->object = $request->object;
+        $book->image = 'img/'.$imageName;
+        $book->description = $request->description;
+        $book->color = $request->color;
+        $book->location = $request->location;
+        $book->idcard = $request->idcard;
+
+        $book->update();
+
+        //$book->update($request->all());
         return redirect()->route('books.index')
           ->with('success', 'Book updated successfully.');
     }
