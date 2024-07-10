@@ -34,7 +34,28 @@ class BookController extends Controller
             'location' => 'required',
             'idcard' => 'required|max:255',
         ]);
-        Book::create($request->all());
+
+        $book = new Book();
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img'), $imageName);
+
+        $book->object = $request->object;
+        $book->image = 'img/'.$imageName;
+        $book->description = $request->description;
+        $book->color = $request->color;
+        $book->location = $request->location;
+        $book->idcard = $request->idcard;
+
+        $book->save();
+
+        /*Book::create([
+            'object' =>$request->input('object'),
+            'description' =>$request->input('description'),
+            'color' =>$request->input('color'),
+            'location' =>$request->input('location'),
+            'idcard' =>$request->input('idcard'),
+        ]);*/
         return redirect()->route('books.index')
           ->with('success','Book created successfully.');
     }

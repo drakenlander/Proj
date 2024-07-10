@@ -23,11 +23,16 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-6">
           <h3>Añadir un Objeto Perdido</h3>
-          <form action="{{ route('books.store') }}" method="post">
+          <form action="{{ route('books.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <label for="object">Objeto</label>
               <input type="text" class="form-control" id="object" name="object" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="image">Imágen</label>
+              <input type="file" class="form-control" id="image" name="image">
             </div>
             <br>
             <div class="form-group">
