@@ -11,9 +11,9 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
 <body style="background-color: #f4f5f7;">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
     <div class="container-fluid">
-      <a class="navbar-brand h1" href={{ route('books.index') }}>Herramienta de Gestión de Objetos Perdidos</a>
+      <a class="navbar-brand h1" href={{ route('books.index') }} style="color: white; margin: 0; display: inline-block; padding-bottom: 7px;">Herramienta de Gestión de Objetos Perdidos</a>
       <div class="justify-end ">
-        <div class="row">
+        <div class="row" style="padding-right: 15px;">
           <div class="col ">
             <a class="btn btn-sm btn-success" style="width:175px" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
           </div>
@@ -37,7 +37,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
   <div class="container mt-5">
     <div class="row">
       @foreach ($books as $book)
-        <div class="col-sm">
+        <div class="col-sm" style="margin-bottom: 40px;">
           <div class="card" style="width: 18rem; height: 44rem;">
             <div class="card-body">
               <h5 class="card-title">{{ $book->object }}</h5>
@@ -49,8 +49,8 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
               <li class="list-group-item"><b>Fecha del Reporte: </b>{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
               <li class="list-group-item"><b>Última Actualización': </b>{{ $book->updated_at->format('d/m/Y - g:i A')}}</li>
             </ul>
-            <div class="card-body">
-              <img src="{{ asset($book->image) }}" alt="{{ $book->object }}" style="display: flex; margin-left: auto; margin-right: auto; width: 150px">
+            <div class="card-body" style="background-image: url('{{ asset($book->image) }}'); background-size: cover; background-repeat: no-repeat;
+            background-position: center center; height: 350px;">
             </div>
             <div class="card-footer">
               <div class="row">

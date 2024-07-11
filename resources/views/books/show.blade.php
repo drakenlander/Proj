@@ -11,9 +11,9 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
 <body style="background-color: #f4f5f7;">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
       <div class="container-fluid">
-        <a class="navbar-brand h1" href={{ route('books.explore') }}>Listado de Objetos Perdidos</a>
+        <a class="navbar-brand h1" href={{ route('books.explore') }} style="color: white; margin: 0; display: inline-block; padding-bottom: 7px;">Listado de Objetos Perdidos</a>
         <div class="justify-end ">
-          <div class="col ">
+          <div class="col" style="padding-right: 15px;">
             <a class="btn btn-sm btn-success" href={{ route('books.explore') }}>Regresar</a>
           </div>
         </div>
@@ -35,7 +35,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
                     <li class="list-group-item"><b>Fecha del Reporte: </b>{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
                 </ul>
                 <br>
-                <img src="{{ asset($book->image) }}" alt="{{ $book->object }}" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+                <img src="{{ asset($book->image) }}" alt="{{ $book->object }}" class="img-thumbnail" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
                 <br>
             </div>
         </div>

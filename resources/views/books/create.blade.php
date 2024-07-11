@@ -11,9 +11,9 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
 <body style="background-color: #f4f5f7;">
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #089cac;">
     <div class="container-fluid">
-      <a class="navbar-brand h1" href={{ route('books.index') }}>Herramienta de Gestión de Objetos Perdidos</a>
+      <a class="navbar-brand h1" href={{ route('books.index') }} style="color: white; margin: 0; display: inline-block; padding-bottom: 7px;">Herramienta de Gestión de Objetos Perdidos</a>
       <div class="justify-end ">
-        <div class="col ">
+        <div class="col" style="padding-right: 15px;">
           <a class="btn btn-sm btn-success" href={{ route('books.index') }}>Regresar</a>
         </div>
       </div>
@@ -26,32 +26,32 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
           <form action="{{ route('books.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-              <label for="object">Objeto</label>
+              <label for="object"><b>Objeto</b></label>
               <input type="text" class="form-control" id="object" name="object" required>
             </div>
             <br>
             <div class="form-group">
-              <label for="image">Imagen</label>
+              <label for="image"><b>Imagen</b></label>
               <input type="file" class="form-control" id="image" name="image">
             </div>
             <br>
             <div class="form-group">
-              <label for="description">Descripción</label>
+              <label for="description"><b>Descripción</b></label>
               <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
             </div>
             <br>
             <div class="form-group">
-              <label for="color">Color</label>
+              <label for="color"><b>Color</b></label>
               <input type="text" class="form-control" id="color" name="color" required>
             </div>
             <br>
             <div class="form-group">
-              <label for="location">Ubicación</label>
+              <label for="location"><b>Ubicación</b></label>
               <textarea class="form-control" id="location" name="location" rows="3" required></textarea>
             </div>
             <br>
             <div class="form-group">
-              <label for="idcard">Cédula</label>
+              <label for="idcard"><b>Cédula</b></label>
               <input type="text" class="form-control" id="idcard" name="idcard" required>
             </div>
             <br>
