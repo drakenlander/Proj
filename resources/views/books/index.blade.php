@@ -48,7 +48,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
               <li class="list-group-item"><b>Color: </b>{{ $book->color }}</li>
               <li class="list-group-item"><b>Ubicación: </b>{{ $book->location }}</li>
               <li class="list-group-item"><b>Fecha del Reporte: </b>{{ $book->created_at->format('d/m/Y - g:i A') }}</li>
-              <li class="list-group-item"><b>Última Actualización': </b>{{ $book->updated_at->format('d/m/Y - g:i A')}}</li>
+              <li class="list-group-item"><b>Última Actualización: </b>{{ $book->updated_at->format('d/m/Y - g:i A')}}</li>
             </ul>
             <div class="card-body" style="background-image: url('{{ asset($book->image) }}'); background-size: cover; background-repeat: no-repeat;
             background-position: center center; height: 350px;">
