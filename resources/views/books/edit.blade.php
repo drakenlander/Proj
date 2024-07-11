@@ -23,7 +23,7 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-6">
           <h3>Actualizar Registro de Objeto Perdido</h3>
-          <form action="{{ route('books.update', $book->id) }}" method="post">
+          <form action="{{ route('books.update', $book->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">

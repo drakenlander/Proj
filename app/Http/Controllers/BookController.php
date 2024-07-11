@@ -84,6 +84,7 @@ class BookController extends Controller
     {
         $request->validate([
             'object' => 'required|max:255',
+            'image' => 'image',
             'description' => 'required',
             'color' => 'required|max:255',
             'location' => 'required',
@@ -91,20 +92,27 @@ class BookController extends Controller
         ]);
 
         $book = Book::find($id);
+        $image_old = $book->image;
 
-        if($request->hasfile('image'))
+        if($request->image != '')
         {
+            $path = public_path().'/img/';
+
+            $image = $request->image;
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('img'), $imageName);
+            $image->move($path, $imageName);
+            $imageName = 'img/'.$imageName;
+
+            $book->update(['image' => $imageName]);
         }
 
         else
         {
-            $imageName = '1.jpg';
+            $imageName = $image_old;
         }
 
         $book->object = $request->object;
-        $book->image = 'img/'.$imageName;
+        $book->image = $imageName;
         $book->description = $request->description;
         $book->color = $request->color;
         $book->location = $request->location;
