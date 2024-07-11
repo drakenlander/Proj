@@ -21,6 +21,12 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
     </div>
   </nav>
   <div class="container mt-5">
+    <form action="{{ route('books.search') }}" method="GET">
+      <div class="input-group" style="width: 1000px; margin: auto; padding-bottom: 20px;">
+          <input type="text" class="form-control" name="search" placeholder="Buscar Objetos Perdidos...">
+      </div>
+    </form>
+    <br>
     <div class="row">
       @foreach ($books as $book)
         <div class="col-sm" style="margin-bottom: 40px;">

@@ -31,5 +31,6 @@ Route::put('/books/{book}', BookController::class .'@update')->name('books.updat
 Route::delete('/books/{book}', BookController::class .'@destroy')->name('books.destroy');
 
 Route::get('/explore', BookController::class .'@explore')->name('books.explore');
+Route::get('/search', BookController::class .'@search')->name('books.search');
 
 Route::get('/profile', UserController::class .'@show')->name('user.show');

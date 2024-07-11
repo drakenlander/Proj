@@ -7,9 +7,6 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $books = Book::all();
@@ -22,9 +19,6 @@ class BookController extends Controller
         return view('books.explore', compact('books'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -68,18 +62,12 @@ class BookController extends Controller
           ->with('success','Book created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $book = Book::find($id);
         return view('books.show', compact('book'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $request->validate([
@@ -125,9 +113,14 @@ class BookController extends Controller
           ->with('success', 'Book updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $books = Book::where('object', 'like', "%$search%")->get();
+
+        return view('books.explore', ['books' => $books]);
+    }
+
     public function destroy(string $id)
     {
         $book = Book::find($id);
