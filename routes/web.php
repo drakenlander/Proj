@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 Route::get('/home', BookController::class .'@index')->name('books.index');
 Route::post('/books', BookController::class .'@store')->name('books.store');
 Route::get('/books/create', BookController::class . '@create')->name('books.create');
