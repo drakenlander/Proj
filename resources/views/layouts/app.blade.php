@@ -27,6 +27,7 @@
     </style>
 
     <!-- Scripts -->
+    <!-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) -->
 </head>
 <body class="bg-ein" style="background-color: #f4f5f7;">
     <div id="app">
