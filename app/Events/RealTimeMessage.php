@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Book;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -14,12 +15,12 @@ class RealTimeMessage implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public string $book;
+    public Book $book;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(string $book)
+    public function __construct(Book $book)
     {
         $this->book = $book;
     }
@@ -31,8 +32,6 @@ class RealTimeMessage implements ShouldBroadcast
      */
     public function broadcastOn(): Channel
     {
-        return [
-            new Channel('events'),
-        ];
+        return new Channel('events');
     }
 }

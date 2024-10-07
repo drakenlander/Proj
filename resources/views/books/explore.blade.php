@@ -56,5 +56,16 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
       @endforeach
     </div>
   </div>
+
+  @vite('resources/js/app.js')
+  
+  <script type="module">
+      Echo.channel('events')
+          .listen('RealTimeMessage', (e) => {
+            console.log('Event fired:', e.book.object);
+            alert('Se añadió un objeto: ' + e.book.object);
+          });
+  </script>
+
 </body>
 </html>

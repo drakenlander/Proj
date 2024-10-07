@@ -129,12 +129,5 @@
                 </div>
             </div>
         </div>
-
-        @vite('resources/js/app.js')
-        <script type="module">
-            Echo.channel('events')
-                .listen('RealTimeMessage', (e) => console.log(e.book));
-        </script>
-
     </body>
 </html>
