@@ -13,11 +13,11 @@ class BookController extends Controller
         return view('books.index', compact('books'));
     }
 
-    public function explore()
-    {
-        $books = Book::all();
-        return view('books.explore', compact('books'));
-    }
+    //public function explore()
+    //{
+    //    $books = Book::all();
+    //    return view('books.explore', compact('books'));
+    //}
 
     public function store(Request $request)
     {
@@ -62,11 +62,11 @@ class BookController extends Controller
           ->with('success','Book created successfully.');
     }
 
-    public function show(string $id)
-    {
-        $book = Book::find($id);
-        return view('books.show', compact('book'));
-    }
+    //public function show(string $id)
+    //{
+    //    $book = Book::find($id);
+    //    return view('books.show', compact('book'));
+    //}
 
     public function update(Request $request, string $id)
     {
