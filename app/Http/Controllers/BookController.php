@@ -5,19 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 
-class BookController extends Controller
+class BookController extends Controller implements ConcreteObject
 {
     public function index()
     {
         $books = Book::all();
         return view('books.index', compact('books'));
     }
-
-    //public function explore()
-    //{
-    //    $books = Book::all();
-    //    return view('books.explore', compact('books'));
-    //}
 
     public function store(Request $request)
     {
@@ -51,22 +45,9 @@ class BookController extends Controller
 
         $book->save();
 
-        /*Book::create([
-            'object' =>$request->input('object'),
-            'description' =>$request->input('description'),
-            'color' =>$request->input('color'),
-            'location' =>$request->input('location'),
-            'idcard' =>$request->input('idcard'),
-        ]);*/
         return redirect()->route('books.index')
           ->with('success','Book created successfully.');
     }
-
-    //public function show(string $id)
-    //{
-    //    $book = Book::find($id);
-    //    return view('books.show', compact('book'));
-    //}
 
     public function update(Request $request, string $id)
     {
@@ -108,17 +89,8 @@ class BookController extends Controller
 
         $book->update();
 
-        //$book->update($request->all());
         return redirect()->route('books.index')
           ->with('success', 'Book updated successfully.');
-    }
-
-    public function search(Request $request)
-    {
-        $search = $request->input('search');
-        $books = Book::where('object', 'like', "%$search%")->get();
-
-        return view('books.explore', ['books' => $books]);
     }
 
     public function destroy(string $id)
@@ -127,6 +99,14 @@ class BookController extends Controller
         $book->delete();
         return redirect()->route('books.index')
           ->with('success', 'Book deleted successfully');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $books = Book::where('object', 'like', "%$search%")->get();
+
+        return view('books.explore', ['books' => $books]);
     }
 
     public function create()

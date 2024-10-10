@@ -7,43 +7,21 @@ use App\Models\Book;
 
 class ObjectObserver
 {
-    /**
-     * Handle the Book "created" event.
-     */
     public function created(Book $book): void
     {
-        event(new RealTimeMessage($book));
+        $message = 'Se ha añadido un objeto perdido: ';
+        event(new RealTimeMessage($book, $message));
     }
 
-    /**
-     * Handle the Book "updated" event.
-     */
     public function updated(Book $book): void
     {
-        event(new RealTimeMessage($book));
+        $message = 'Se ha actualizado un objeto perdido: ';
+        event(new RealTimeMessage($book, $message));
     }
 
-    /**
-     * Handle the Book "deleted" event.
-     */
     public function deleted(Book $book): void
     {
-        event(new RealTimeMessage($book));
-    }
-
-    /**
-     * Handle the Book "restored" event.
-     */
-    public function restored(Book $book): void
-    {
-        event(new RealTimeMessage($book));
-    }
-
-    /**
-     * Handle the Book "force deleted" event.
-     */
-    public function forceDeleted(Book $book): void
-    {
-        //
+        $message = 'Se ha eliminado un objeto perdido: ';
+        event(new RealTimeMessage($book, $message));
     }
 }

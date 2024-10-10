@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 
-class ObjectExplorationController extends BookController
+class ObjectExplorationController implements ConcreteObject
 {
+    public function index()
+    {
+        $books = Book::all();
+        return view('books.index', compact('books'));
+    }
+
     public function explore()
     {
         $books = Book::all();
