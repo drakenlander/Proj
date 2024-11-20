@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\LostObjectsImport;
+use App\Exports\LostObjectsExport;
 
 class BookController extends Controller implements ConcreteObject
 {
@@ -118,5 +121,19 @@ class BookController extends Controller implements ConcreteObject
     {
         $book = Book::find($id);
         return view('books.edit', compact('book'));
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([ 'file' => 'required|mimes:xlsx', ]);
+
+        Excel::import(new LostObjectsImport, $request->file('file'));
+        
+        return back()->with('success', 'Objetos importados exitosamente.');
+    }
+
+    public function export()
+    {
+        return Excel::download(new LostObjectsExport, 'lost_objects.xlsx');
     }
 }

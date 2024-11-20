@@ -35,6 +35,9 @@ Route::get('/books/{book}/edit', BookController::class .'@edit')->name('books.ed
 Route::put('/books/{book}', BookController::class .'@update')->name('books.update');
 Route::delete('/books/{book}', BookController::class .'@destroy')->name('books.destroy');
 
+Route::get('export', [BookController::class, 'export'])->name('export');
+Route::post('import', [BookController::class, 'import'])->name('import');
+
 Route::get('/explore', ObjectExplorationController::class .'@explore')->name('books.explore');
 Route::get('/search', BookController::class .'@search')->name('books.search');
 

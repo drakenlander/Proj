@@ -18,6 +18,18 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
           <div class="col ">
             <a class="btn btn-sm btn-success" style="width:175px" href={{ route('books.create') }}>Añadir Objeto Perdido</a>
           </div>
+          <div class="col">
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="form-group">
+                <input type="file" name="file" id="fileInput" class="d-none">
+                <button type="button" class="btn btn-sm btn-success" style="width:100px" id="uploadButton">Importar</button>
+              </div>
+            </form>
+          </div>
+          <div class="col">
+            <a class="btn btn-sm btn-success" style="width:125px" href="{{ route('export') }}">Exportar a Excel</a>
+          </div>
           <div class="col ">
             <a class="btn btn-sm btn-success" style="width:100px" href={{ route('user.show') }}>Mi Perfil</a>
           </div>
@@ -75,3 +87,13 @@ integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6
   </div>
 </body>
 </html>
+
+<script>
+    document.getElementById('uploadButton').addEventListener('click', function() {
+        document.getElementById('fileInput').click();
+    });
+
+    document.getElementById('fileInput').addEventListener('change', function() {
+        this.form.submit();
+    });
+</script>
