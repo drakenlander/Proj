@@ -40,5 +40,6 @@ Route::post('import', [BookController::class, 'import'])->name('import');
 
 Route::get('/explore', ObjectExplorationController::class .'@explore')->name('books.explore');
 Route::get('/search', BookController::class .'@search')->name('books.search');
+Route::get('/adminSearch', BookController::class .'@adminSearch')->name('books.adminSearch');
 
 Route::get('/profile', UserController::class .'@show')->name('user.show');

@@ -112,6 +112,14 @@ class BookController extends Controller implements ConcreteObject
         return view('books.explore', ['books' => $books]);
     }
 
+    public function adminSearch(Request $request)
+    {
+        $search = $request->input('adminSearch');
+        $books = Book::where('object', 'like', "%$search%")->get();
+
+        return view('books.index', ['books' => $books]);
+    }
+
     public function create()
     {
         return view('books.create');
