@@ -70,6 +70,11 @@ class BookController extends Controller implements ConcreteObject
         {
             $path = public_path().'/img/';
 
+            if ($image_old !== 'img/1.jpg' && file_exists(public_path($image_old)))
+            {
+                unlink(public_path($image_old));
+            }
+
             $image = $request->image;
             $imageName = time().'.'.$request->image->extension();
             $image->move($path, $imageName);
